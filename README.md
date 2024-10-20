@@ -20,7 +20,7 @@ Visit `localhost:4000`.
 
 1. Click "Click here to go to page B"
 
-2. Then on that page click "Click here to go to page B"
+2. Then on that page click "Click here to go to page A"
 
 3. Repeat steps 1 and 2 as much as you like
 
