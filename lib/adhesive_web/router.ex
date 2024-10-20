@@ -14,12 +14,19 @@ defmodule AdhesiveWeb.Router do
     plug :accepts, ["json"]
   end
 
-  scope "/", AdhesiveWeb do
-    pipe_through :browser
+  live_session :my_live_session_a do
+    scope "/", AdhesiveWeb do
+      pipe_through :browser
 
-    # get "/", PageController, :home
-    live "/", PageALive, :index
-    live "/page-b", PageBLive, :index
+      live "/", PageALive, :index
+    end
+  end
+
+  live_session :my_live_session_b do
+    scope "/", AdhesiveWeb do
+      pipe_through :browser
+      live "/page-b", PageBLive, :index
+    end
   end
 
   # Other scopes may use custom stacks.
