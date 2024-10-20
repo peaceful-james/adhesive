@@ -17,7 +17,9 @@ defmodule AdhesiveWeb.Router do
   scope "/", AdhesiveWeb do
     pipe_through :browser
 
-    get "/", PageController, :home
+    # get "/", PageController, :home
+    live "/", PageALive, :index
+    live "/page-b", PageBLive, :index
   end
 
   # Other scopes may use custom stacks.
