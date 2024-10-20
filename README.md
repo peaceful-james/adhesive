@@ -1,18 +1,33 @@
 # Adhesive
 
-To start your Phoenix server:
+## Dev setup
 
-  * Run `mix setup` to install and setup dependencies
-  * Start Phoenix endpoint with `mix phx.server` or inside IEx with `iex -S mix phx.server`
+``` shell
+asdf install
+mix deps.get
+mix ecto.create # sorry about this, I should have created with --no-ecto
+```
 
-Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
+## The problem:
 
-Ready to run in production? Please [check our deployment guides](https://hexdocs.pm/phoenix/deployment.html).
+Run server:
 
-## Learn more
+``` shell
+iex -S mix phx.server
+```
 
-  * Official website: https://www.phoenixframework.org/
-  * Guides: https://hexdocs.pm/phoenix/overview.html
-  * Docs: https://hexdocs.pm/phoenix
-  * Forum: https://elixirforum.com/c/phoenix-forum
-  * Source: https://github.com/phoenixframework/phoenix
+Visit `localhost:4000`.
+
+1. Click "Click here to go to page B"
+
+2. Then on that page click "Click here to go to page B"
+
+3. Repeat steps 1 and 2 as much as you like
+
+Observe: The "count" in the top left gets reset.
+
+This count is in a sticky live view (`AdhesiveWeb.StickyLive`) and should not be reset.
+
+The count is reset because pages A and B have their routes in different "live sessions" in the router.
+
+I do not know if this is expected behavior or a bug.
