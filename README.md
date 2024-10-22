@@ -8,7 +8,7 @@ mix deps.get
 mix ecto.create # sorry about this, I should have created with --no-ecto
 ```
 
-## The problem:
+## The `live_session` restriction:
 
 Run server:
 
@@ -30,4 +30,4 @@ This count is in a sticky live view (`AdhesiveWeb.StickyLive`) and should not be
 
 The count is reset because pages A and B have their routes in different "live sessions" in the router.
 
-I do not know if this is expected behavior or a bug.
+Page C is in same live session as B so B/C switching does not reset state.

@@ -26,6 +26,7 @@ defmodule AdhesiveWeb.Router do
     scope "/", AdhesiveWeb do
       pipe_through :browser
       live "/page-b", PageBLive, :index
+      live "/page-c", PageCLive, :index
     end
   end
 

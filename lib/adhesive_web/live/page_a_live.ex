@@ -19,6 +19,9 @@ defmodule AdhesiveWeb.PageALive do
       <.link navigate={~p"/page-b"}>
         Click here to go to page B
       </.link>
+      <.link navigate={~p"/page-c"}>
+        Click here to go to page C
+      </.link>
     </div>
     """
   end

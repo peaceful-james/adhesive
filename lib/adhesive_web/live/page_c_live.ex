@@ -1,4 +1,4 @@
-defmodule AdhesiveWeb.PageBLive do
+defmodule AdhesiveWeb.PageCLive do
   @moduledoc false
   use AdhesiveWeb, :live_view
 
@@ -12,15 +12,15 @@ defmodule AdhesiveWeb.PageBLive do
   @impl LiveView
   def render(assigns) do
     ~H"""
-    <div id="page-b">
+    <div id="page-c">
       <p>
-        This is page B
+        This is page C
       </p>
       <.link navigate={~p"/"}>
         Click here to go to page A
       </.link>
-      <.link navigate={~p"/page-c"}>
-        Click here to go to page C
+      <.link navigate={~p"/page-b"}>
+        Click here to go to page B
       </.link>
     </div>
     """
